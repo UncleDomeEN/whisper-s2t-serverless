@@ -43,4 +43,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=60s \
     CMD curl -f http://localhost:8000/health || exit 1
 
 # Start FastAPI server
-CMD ["python3", "-u", "/app/app.py"]
+# CMD ["python3", "-u", "/app/app.py"]
+
+# Regisztráljuk a handlert a RunPod felé
+runpod.serverless.start({"handler": handler})
