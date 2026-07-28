@@ -1,6 +1,9 @@
 # WhisperS2T with CTranslate2 backend (optimized pipeline)
 whisper-s2t
 
+# Runpod
+runpod
+
 # FastAPI server
 fastapi>=0.100.0
 uvicorn[standard]>=0.23.0
