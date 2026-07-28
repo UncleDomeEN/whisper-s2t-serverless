@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y \
 # Install WhisperS2T and FastAPI
 RUN pip3 install --no-cache-dir \
     whisper-s2t \
+    runpod \
     fastapi>=0.100.0 \
     uvicorn[standard]>=0.23.0 \
     python-multipart>=0.0.6 \
@@ -44,6 +45,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=60s \
 
 # Start FastAPI server
 # CMD ["python3", "-u", "/app/app.py"]
+COPY src/handler.py /app/handler.py
 
 # Regisztráljuk a handlert a RunPod felé
 runpod.serverless.start({"handler": handler})
