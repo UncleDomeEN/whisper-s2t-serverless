@@ -47,5 +47,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=60s \
 # CMD ["python3", "-u", "/app/app.py"]
 COPY src/handler.py /app/handler.py
 
-# Regisztráljuk a handlert a RunPod felé
-runpod.serverless.start({"handler": handler})
+# Start handler
+CMD [ "python", "-u", "/handler.py" ]
